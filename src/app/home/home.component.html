@@ -1,0 +1,13 @@
+<main *ngIf="!loading">
+    <h1>Hola {{username}}! Te estaba esperando!</h1>
+    <hr>
+
+    <form *ngIf="role === 1">
+        <label for="name">Nombre: </label>
+        <input #name id="name" type="text" [value]="username" placeholder="Cuál es tu nombre">
+        <br>
+        <button (click)="guardar(name.value)">Guardar Cambios</button>
+    </form>
+
+    <p *ngIf="role !== 1">No podes editar, solo ver y te vas a llamar siempre {{username}} 🙂</p>
+</main>
